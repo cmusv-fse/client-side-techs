@@ -53,10 +53,13 @@
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script>
+        // TODO: Modify this code to use promise
         $(document).ready(function () {
             $("#action").click(function () {
                 $.ajax({
-                    url: "http://www.randomtext.me/api/", success: function (result) {
+                    method: "GET",
+                    url: "http://www.randomtext.me/api/", 
+                    success: function (result) {
                         $("#div1").html(result.text_out);
                     }
                 });
