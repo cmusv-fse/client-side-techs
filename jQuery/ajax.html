@@ -1,72 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jQuery AJAX example</title>
 
     <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-        }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }
 
-        button#action {
-            background-color: #555555;
-            /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-        }
+      button#action {
+        background-color: #555555;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
 
-        .demo {
-            text-align: center;
-            position: relative;
-            top: 30%;
-            width: 50%;
-            height: 50%;
-            margin: auto;
-            font-size: 24px;
-
-        }
-
+      .demo {
+        text-align: center;
+        position: relative;
+        top: 30%;
+        width: 50%;
+        height: 50%;
+        margin: auto;
+        font-size: 24px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="demo">
-        <div id="div1">
-            <h2>Let jQuery AJAX Change This Text</h2>
-        </div>
+      <div id="div1">
+        <h2>Let jQuery AJAX Change This Text</h2>
+      </div>
 
-        <button id="action">Get Some Random Text!</button>
+      <button id="action">Get Some Random Text!</button>
     </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"></script>
     <script>
-        // TODO: Modify this code to use promise instead
-        $(document).ready(function () {
-            $("#action").click(function () {
-                $.ajax({
-                    method: "GET",
-                    url: "http://www.randomtext.me/api/", 
-                    success: function (result) {
-                        $("#div1").html(result.text_out);
-                    }
-                });
-            });
+      // TODO: Modify this code to use promise instead
+      $(document).ready(function () {
+        $("#action").click(function () {
+          $.ajax({
+            method: "GET",
+            url: "http://www.randomtext.me/api/",
+            success: function (result) {
+              $("#div1").html(result.text_out);
+            },
+          });
         });
-
+      });
     </script>
-</body>
-
+  </body>
 </html>
