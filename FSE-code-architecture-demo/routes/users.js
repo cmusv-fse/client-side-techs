@@ -1,14 +1,11 @@
-var express = require("express");
-var router = express.Router();
-let joinController = require("../controllers/joinController").JoinController;
+const express = require("express");
+const router = express.Router();
+const joinController = require("../controllers/joinController");
 
-router.get("/", function (req, res, next) {
+router.get("/", (req, res, next) => {
   res.send("users page");
 });
 
-router.post("/:username", function (req, res, next) {
-  let username = req.params.username;
-  res.send(joinController.join(username));
-});
+router.post("/:username", joinController.join);
 
 module.exports = router;

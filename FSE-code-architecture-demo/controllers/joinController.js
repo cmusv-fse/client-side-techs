@@ -1,11 +1,13 @@
-const User = require("../models/user").User;
+const User = require("../models/user");
 
 class JoinController {
-  static join(username) {
-    let user = new User(username);
+  static join(req, res) {
+    const username = req.params.username;
+    const user = new User(username);
     user.save();
-    return "User created successfully: " + username;
+    const response = "User created successfully: " + username;
+    res.send(response);
   }
 }
 
-exports.JoinController = JoinController;
+module.exports = JoinController;
